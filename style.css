@@ -1,0 +1,116 @@
+:root {
+  --main-bg-color: #242424;
+  --input-bg-color: rgba(255, 255, 255, 0.87);
+  --primary-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --text-color: #666666;
+  --search-button-gradient: linear-gradient(156deg, rgba(131,58,180,1) 33%, rgba(253,29,29,1) 70%);
+  --search-button-hover-gradient: linear-gradient(156deg, rgba(2,0,36,1) 20%, rgba(121,9,100,1) 94%);
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.input-section {
+  width: 1040px;
+  background-color: var(--input-bg-color);
+  border-radius: 4px;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+#search-input {
+  width: 97%;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  border-radius: 4px;
+  font-size: 16px;
+  height: 48px;
+  border: none;
+  padding: 0 16px;
+}
+
+#search-input:focus-within {
+  outline: none;
+}
+
+#search-button {
+  width: 9%;
+  background: var(--search-button-gradient);
+  color: var(--input-bg-color);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background: var(--search-button-hover-gradient);
+}
+
+.gifs-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.img-gif {
+  flex-grow: 1;
+  border-radius: 4px;
+}
+
+.not-results {
+  color: var(--input-bg-color);
+  font-size: 24px;
+}
+
+.loader {
+  padding: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader[hidden] {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
